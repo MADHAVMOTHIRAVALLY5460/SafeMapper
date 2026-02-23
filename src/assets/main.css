@@ -1,0 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
+@import "tailwindcss";
+@theme {
+  --font-main: "DM Sans", sans-serif; 
+}
