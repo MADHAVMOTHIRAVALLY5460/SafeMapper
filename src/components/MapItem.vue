@@ -5,6 +5,16 @@
 
     import { mapformHandle } from '@/stateHandle/mapform';
 
+    import defaultMarkerIconRetina from 'leaflet/dist/images/marker-icon-2x.png';
+    import defaultMarkerIcon from 'leaflet/dist/images/marker-icon.png';
+    import defaultMarkerShadow from 'leaflet/dist/images/marker-shadow.png';
+    
+    L.Icon.Default.mergeOptions({
+      iconUrl: defaultMarkerIcon.src,
+      iconRetinaUrl: defaultMarkerIconRetina.src,
+      shadowUrl: defaultMarkerShadow.src,
+    });
+
     let markers;
     let map;
 
