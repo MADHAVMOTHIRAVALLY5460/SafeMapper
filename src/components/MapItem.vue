@@ -37,7 +37,7 @@
                 console.log(dataArray[0])
 
                 Leaflet.polyline(toRaw(dataArray[0]), {
-                    color: "lightblue",
+                    color: "#27EB1D",
                     weight: 5,
                 }).addTo(map)
             })
