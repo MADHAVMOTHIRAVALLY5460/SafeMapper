@@ -4,7 +4,7 @@
     import 'leaflet/dist/leaflet.css'
 
     import { mapformHandle } from '@/stateHandle/mapform';
-    let map;
+    let map, markers;
 
     onMounted(() => {
         let lat = 0;
@@ -21,6 +21,7 @@
             lon = Math.round(data.coords.longitude * 10000) / 10000;
 
             map = Leaflet.map('map', {preferCanvas: true}).setView([lat, lon], 18)
+            markers = Leaflet.featureGroup().addTo(map)
 
             Leaflet.tileLayer(
                 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
