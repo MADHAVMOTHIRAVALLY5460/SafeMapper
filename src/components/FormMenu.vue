@@ -16,9 +16,9 @@
 
             const data = await proxyUrl.json()
             
-            let {lat, lon} = JSON.parse(data.contents)[0]
+            let result = JSON.parse(JSON.stringify(data.contents))
 
-            let dlon = lon, dlat = lat;
+            let dlon = result[0].lon, dlat = result[0].lat;
             console.log(dlat, dlon)
 
             const getData = async (location) => {
