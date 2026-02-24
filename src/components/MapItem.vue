@@ -45,6 +45,11 @@
                         color: "#87CEEB",
                         weight: 5,
                     }).addTo(map)
+
+                    map.fitBounds (polyline.getBounds(), {
+                        padding: [20 20],
+                        maxZoom: 16
+                    })
                 },
                 {deep: true}
             )
