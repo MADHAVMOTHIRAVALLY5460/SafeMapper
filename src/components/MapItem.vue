@@ -4,8 +4,6 @@
     import 'leaflet/dist/leaflet.css'
 
     import { mapformHandle } from '@/stateHandle/mapform';
-
-    let markers;
     let map;
 
     onMounted(() => {
