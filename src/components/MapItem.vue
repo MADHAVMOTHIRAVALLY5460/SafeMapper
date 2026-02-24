@@ -28,7 +28,7 @@
             })
         }
 
-        getLocation().then((data) => {
+        getLocation().then(async (data) => {
             lat = Math.round(data.coords.latitude * 10000) / 10000;
             lon = Math.round(data.coords.longitude * 10000) / 10000;
 
@@ -42,15 +42,13 @@
 
             Leaflet.marker([lat, lon]).addTo(markers)
 
-            mapformHandle.getPath().then(() => {
-                const dataArray = JSON.parse(JSON.stringify(mapformHandle.coords))
-                console.log(dataArray[0])
+            const dataArray = JSON.parse(JSON.stringify(await mapformHandle.coords))
+            console.log(dataArray[0])
 
-                Leaflet.polyline(toRaw(dataArray[0]), {
-                    color: "#27EB1D",
-                    weight: 5,
-                }).addTo(map)
-            })
+            Leaflet.polyline(toRaw(dataArray[0]), {
+                color: "#27EB1D",
+                weight: 5,
+            }).addTo(map)
         })
     })
 </script>
