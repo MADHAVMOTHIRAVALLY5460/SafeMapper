@@ -1,5 +1,5 @@
 <script setup>
-    import { onMounted, toRaw } from 'vue'
+    import { onMounted, toRaw, watch } from 'vue'
     import * as Leaflet from 'leaflet'
     import 'leaflet/dist/leaflet.css'
 
@@ -42,13 +42,18 @@
 
             Leaflet.marker([lat, lon]).addTo(markers)
 
-            const dataArray = JSON.parse(JSON.stringify(await mapformHandle.coords))
-            console.log(dataArray[0])
-
-            Leaflet.polyline(toRaw(dataArray[0]), {
-                color: "#27EB1D",
-                weight: 5,
-            }).addTo(map)
+            watch(
+                () => mapformHandle.coords
+                (newcoords) => {
+                    const dataArray = JSON.parse(JSON.stringify(mapformHandle.coords))
+                    console.log(dataArray[0])
+        
+                    Leaflet.polyline(toRaw(dataArray[0]), {
+                        color: "#27EB1D",
+                        weight: 5,
+                    }).addTo(map)
+                }
+            )
         })
     })
 </script>
