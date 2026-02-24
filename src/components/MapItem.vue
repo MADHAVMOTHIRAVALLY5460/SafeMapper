@@ -43,7 +43,7 @@
             Leaflet.marker([lat, lon]).addTo(markers)
 
             watch(
-                () => mapformHandle.coords
+                () => mapformHandle.coords,
                 (newcoords) => {
                     const dataArray = JSON.parse(JSON.stringify(mapformHandle.coords))
                     console.log(dataArray[0])
@@ -52,7 +52,8 @@
                         color: "#27EB1D",
                         weight: 5,
                     }).addTo(map)
-                }
+                },
+                {deep: true}
             )
         })
     })
