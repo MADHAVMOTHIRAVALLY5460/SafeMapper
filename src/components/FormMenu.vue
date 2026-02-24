@@ -27,7 +27,7 @@
 
                 try {
                     const response = await fetch(`https://safemapperbackend.onrender.com/risk`)
-                    console.log(response.body)
+                    console.log(response)
                     
                     const riskDisp = document.getElementById("riskfactor")
                     if (riskScore.value > 50 && riskScore < 70) {
@@ -39,7 +39,7 @@
                         riskDisp.classList.add("text-red/52")
                     }
                 } catch (err) {
-                    console.err("Error in fetching value!", err);
+                    console.log("Error in fetching value!", err);
                 } finally {
                     isLoading.value = false;
                 }
