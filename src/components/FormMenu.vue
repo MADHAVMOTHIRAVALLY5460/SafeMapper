@@ -27,7 +27,9 @@
 
                 try {
                     const response = await fetch(`https://safemapperbackend.onrender.com/risk`)
-                    console.log(response.json())
+                    const riskScoreData = await reponse.json()
+
+                    console.log(riskScoreData)
                     
                     const riskDisp = document.getElementById("riskfactor")
                     if (riskScore.value > 50 && riskScore < 70) {
