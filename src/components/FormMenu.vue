@@ -11,8 +11,8 @@
         if (evt.key === "Enter") {
             console.log(evt.target.value)
 
-            const requestURL = `https://nominatim.openstreetmap.org/search?format=json&accept-language=en&q=${encodeURIComponent(evt.target.value)}`
-            const proxyUrl = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(requestURL)}`);
+            //const requestURL = `https://nominatim.openstreetmap.org/search?format=json&accept-language=en&q=${encodeURIComponent(evt.target.value)}`
+            const proxyUrl = await fetch(`https://nominatim.openstreetmap.org/search?format=json&accept-language=en&q=${encodeURIComponent(evt.target.value)}`);
 
             const data = await proxyUrl.json()
             
