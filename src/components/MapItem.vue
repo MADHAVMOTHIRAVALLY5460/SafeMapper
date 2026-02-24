@@ -5,16 +5,6 @@
 
     import { mapformHandle } from '@/stateHandle/mapform';
 
-    import defaultMarkerIconRetina from 'leaflet/dist/images/marker-icon-2x.png';
-    import defaultMarkerIcon from 'leaflet/dist/images/marker-icon.png';
-    import defaultMarkerShadow from 'leaflet/dist/images/marker-shadow.png';
-    
-    L.Icon.Default.mergeOptions({
-      iconUrl: defaultMarkerIcon.src,
-      iconRetinaUrl: defaultMarkerIconRetina.src,
-      shadowUrl: defaultMarkerShadow.src,
-    });
-
     let markers;
     let map;
 
@@ -33,14 +23,18 @@
             lon = Math.round(data.coords.longitude * 10000) / 10000;
 
             map = Leaflet.map('map', {preferCanvas: true}).setView([lat, lon], 18)
-            markers = Leaflet.featureGroup().addTo(map)
 
             Leaflet.tileLayer(
                 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                 { maxZoom: 19 }
             ).addTo(map)
 
-            Leaflet.marker([lat, lon]).addTo(markers)
+            Leaflet.polygon([lat, lon], {
+                color: "#87CEEB",
+                fillColor: "#87CEEB",
+                fillOpacity: 0.5,
+                radius: 3
+            }).addTo(map)
 
             watch(
                 () => mapformHandle.coords,
@@ -49,7 +43,7 @@
                     console.log(dataArray[0])
         
                     Leaflet.polyline(toRaw(dataArray[0]), {
-                        color: "skyblue",
+                        color: "#87CEEB",
                         weight: 5,
                     }).addTo(map)
                 },
