@@ -27,7 +27,7 @@
 
                 try {
                     const response = await fetch(`https://safemapperbackend.onrender.com/risk`)
-                    const riskScoreData = await reponse.json()
+                    const riskScoreData = await response.json()
 
                     console.log(riskScoreData)
                     
