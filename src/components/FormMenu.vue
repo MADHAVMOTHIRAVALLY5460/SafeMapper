@@ -31,7 +31,7 @@
                     //const userRep = Math.round(Math.random() * 100) / 100
 
                     const response = await fetch(`https://safemapperbackend.onrender.com/risk`)
-                    console.log(response.text())
+                    console.log(response.body.text())
                     
                     const riskDisp = document.getElementById("riskfactor")
                     if (riskScore.value > 50 && riskScore < 70) {
