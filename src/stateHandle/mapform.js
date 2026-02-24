@@ -19,7 +19,8 @@ export const mapformHandle = reactive({
             headers: {"Content-Type": "application/json"},
         }).then(() => {
             console.log("Posted!")
-            this.getPath()
         })
+
+        await this.getPath()
     },
 })
