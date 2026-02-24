@@ -1,6 +1,6 @@
 # SafeStride - Know your path
 
-A Project from MADHAVMOTHIRAVALLY5460, Steve-Sunil, Ihsaan-F
+A Project from MADHAVMOTHIRAVALLY5460, Steve-Sunil, Ihsaan-f, Akshaypbmark6, sidhu198505
 
 ## Recommended IDE Setup
 
