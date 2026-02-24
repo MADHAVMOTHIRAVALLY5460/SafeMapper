@@ -36,10 +36,10 @@
                 const dataArray = JSON.parse(JSON.stringify(mapformHandle.coords))
                 console.log(dataArray[0])
 
-                /* Leaflet.polyline(toRaw(dataArray[0]), {
+                Leaflet.polyline(toRaw(dataArray[0]), {
                     color: "blue",
                     weight: 5,
-                }).addTo(map) */
+                }).addTo(map)
             })
         })
     })
