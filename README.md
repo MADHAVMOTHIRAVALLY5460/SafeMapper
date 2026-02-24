@@ -1,6 +1,6 @@
-# frontend
+# SafeStride - Know your path
 
-This template should help get you started developing with Vue 3 in Vite.
+A Project from MADHAVMOTHIRAVALLY5460, Steve-Sunil, Ihsaan-F
 
 ## Recommended IDE Setup
 
