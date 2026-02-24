@@ -26,11 +26,11 @@
                 isLoading.value = true;
 
                 try {
-                    lat = location.coords.latitude
-                    lon = location.coords.longitude
-                    const userRep = Math.round(Math.random() * 100) / 100
+                    //lat = location.coords.latitude
+                    //lon = location.coords.longitude
+                    //const userRep = Math.round(Math.random() * 100) / 100
 
-                    const response = await fetch(`https://safemapperbackend.onrender.com/risk?lat=${lat}&lon=${lon}&userReports=${userRep}`)
+                    const response = await fetch(`https://safemapperbackend.onrender.com/risk`)
                     const data = await response.json()
 
                     riskScore.value = Math.round(data.finalRiskScore * 100)
