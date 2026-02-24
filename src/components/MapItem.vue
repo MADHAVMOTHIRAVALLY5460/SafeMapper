@@ -28,7 +28,7 @@
                 { maxZoom: 19 }
             ).addTo(map)
 
-            Leaflet.polygon([lat, lon], {
+            Leaflet.circle([lat, lon], {
                 color: "#87CEEB",
                 fillColor: "#87CEEB",
                 fillOpacity: 0.5,
