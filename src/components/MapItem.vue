@@ -47,7 +47,7 @@
                     }).addTo(map)
 
                     map.fitBounds (polyline.getBounds(), {
-                        padding: [20 20],
+                        padding: [20, 20],
                         maxZoom: 16
                     })
                 },
