@@ -26,10 +26,6 @@
                 isLoading.value = true;
 
                 try {
-                    //lat = location.coords.latitude
-                    //lon = location.coords.longitude
-                    //const userRep = Math.round(Math.random() * 100) / 100
-
                     const response = await fetch(`https://safemapperbackend.onrender.com/risk`)
                     console.log(response.body.text())
                     
@@ -43,7 +39,7 @@
                         riskDisp.classList.add("text-red/52")
                     }
                 } catch (err) {
-                            console.err("Error in fetching value!", error);
+                    console.err("Error in fetching value!", err);
                 } finally {
                     isLoading.value = false;
                 }
